@@ -1,0 +1,33 @@
+﻿@model Product
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-center">Yeni Ürün Ekleme Sayfası</h3>
+<table class="table">
+    <form method="post" asp-controller="Product" asp-action="Create">
+        <div class="mb-3">
+            <label class="form-label" asp-for="CategoryId">Kategori</label>
+            <select id="MovieType" asp-for="CategoryId">
+                <option value=""></option>
+                @foreach (Category item in ViewBag.CategoryList)
+                {
+                    <option value="@item.Id">@item.CategoryName</option>
+                }
+            </select>
+        </div>
+        <div>
+            <label class="form-label" asp-for="ProductName">Ürün Adı</label>
+            <input type="text" class="form-control" asp-for="ProductName" />
+        </div>
+        <div>
+            <label class="form-label" asp-for="UnitPrice">Fiyat</label>
+            <input type="text" class="form-control" asp-for="UnitPrice" />
+        </div>
+        <div>
+            <label class="form-label" asp-for="UnitsInStock">Stok Adedi</label>
+            <input type="text" class="form-control" asp-for="UnitsInStock" />
+        </div>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </form>
+</table>

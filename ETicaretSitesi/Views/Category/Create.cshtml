@@ -1,0 +1,17 @@
+﻿@model CategoryAddModel
+
+<h3 class="text-center">Yeni Kategori Ekleme Sayfası</h3>
+<table class="table">
+    <form method="post" asp-controller="Category" asp-action="Create">
+        <div class="mb-3">
+            <label class="form-label" asp-for="CategoryName">Kategori</label>
+            <input type="text" class="form-control" asp-for="CategoryName" />
+        </div>
+        <div>
+            <label class="form-label" asp-for="Description">Ürün Adı</label>
+            <input type="text" class="form-control" asp-for="Description" />
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </form>
+</table>
